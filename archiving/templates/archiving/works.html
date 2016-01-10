@@ -11,7 +11,7 @@
               <div class="galleria">
                 {% for work in works %}
                 <img src="{{ work.photo.url }}" rel="{{ work.title }}">
-                <span class="desc">{{ work.created_year }}, {{ work.materials }}, {{ work.size_height }}x{{ work.size_height}}</span>
+                <span class="desc">{{ work.created_year }}, {{ work.materials }}, {{ work.size_height }}x{{ work.size_width}}</span>
                 {% endfor %}
               </div>
               <script>
@@ -19,8 +19,11 @@
                 Galleria.run('.galleria', {
                   height: 500,
                   showImagenav: true,
-                  autoplay: 7000,
+                  // autoplay: 7000,
                   clicknext: true,
+                  thumbCrop: true,
+                  thumbQuality: false,
+                  showCounter: false,
                   dataConfig: function(img) {
                   return {
                       title: $(img).attr('rel'),
