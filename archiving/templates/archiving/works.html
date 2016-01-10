@@ -1,0 +1,37 @@
+{% extends "archiving/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="page-content-wrapper">
+    <div class="containser-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+              <h1>난말이야</h1>
+              <div class="galleria">
+                {% for work in works %}
+                <img src="{{ work.photo.url }}" rel="{{ work.title }}">
+                <span class="desc">{{ work.created_year }}, {{ work.materials }}, {{ work.size_height }}x{{ work.size_height}}</span>
+                {% endfor %}
+              </div>
+              <script>
+                Galleria.loadTheme('{% static 'archiving/classic/galleria.classic.min.js' %}');
+                Galleria.run('.galleria', {
+                  height: 500,
+                  showImagenav: true,
+                  autoplay: 7000,
+                  clicknext: true,
+                  dataConfig: function(img) {
+                  return {
+                      title: $(img).attr('rel'),
+                      description: $(img).next('.desc').html()
+                  };
+                  }
+                });
+              </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
