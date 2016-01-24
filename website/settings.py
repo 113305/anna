@@ -126,8 +126,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+if 'DATABASE_URL' in  os.environ:
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config()
 # Enable Persistent Connections
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
