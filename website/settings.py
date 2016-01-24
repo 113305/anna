@@ -147,8 +147,8 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-DEFAULT_FILE_STORAGE = 'libs.storages.S3Storage.S3Storage'
-
 AWS_STORAGE_BUCKET_NAME = 'archiving-anna'
 AWS_ACCESS_KEY_ID = 'AKIAITJCJGO2L32Y6PFQ'
 AWS_SECRET_ACCESS_KEY = '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'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
