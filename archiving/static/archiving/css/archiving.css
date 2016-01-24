@@ -50,30 +50,3 @@
 .galleria-theme-classic .galleria-info-description {
   font-style : normal;
 }
-
-.h1, h1 {
-  font-size : 25px;
-  margin-bottom: 20px;
-}
-
-/*vh와 %차이 vh는 할당크기를 늘려주는 것, %는 할당된 크기안에서의 퍼센트말하는것*/
-.vcenter {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-}
-.rfull {
-  width: 100vw;
-}
-#indeximg {
-  width: 100%;
-}
-
-#profileimg {
-  width: 45%;
-  margin-bottom: 20px;
-}
-
-.smallnav {
-  font-size: 13px;
-}
