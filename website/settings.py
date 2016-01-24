@@ -150,7 +150,3 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 AWS_STORAGE_BUCKET_NAME = 'archiving-anna'
 AWS_ACCESS_KEY_ID = 'AKIAITJCJGO2L32Y6PFQ'
 AWS_SECRET_ACCESS_KEY = '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'
-
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
