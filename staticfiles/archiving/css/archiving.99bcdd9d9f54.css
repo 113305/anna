@@ -1,0 +1,52 @@
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
+/*romove carousel gradients*/
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+    color: black;
+}
+.carousel-indicators {
+  bottom:-50px;
+}
+
+.carousel-indicators li {
+  background-color: #999 !important;
+  background-color: rgba(70,70,70,.25) !important;
+}
+
+.carousel-indicators .active {
+  background-color: #444 !important;
+}
+
+.carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+    color: black;
+    right: 33%;
+}
+
+.galleria-theme-classic {
+  background: #fff;
+}
+
+.galleria-thumbnails {
+  margin: auto;
+}
+.galleria-theme-classic .galleria-thumbnails .galleria-image {
+  border-style: none;
+}
+
+.galleria-theme-classic .galleria-info {
+  width: 20%;
+  top: 10px;
+}
+
+.galleria-theme-classic .galleria-info-description {
+  font-style : normal;
+}
