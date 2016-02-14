@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -146,10 +147,23 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+try:
+    import website.keys as keys
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    AWS_ACCESS_KEY_ID = keys.AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY = keys.AWS_SECRET_ACCESS_KEY
+    AWS_STORAGE_BUCKET_NAME = keys.AWS_STORAGE_BUCKET_NAME
+    AWS_S3_HOST = keys.AWS_S3_HOST
+except ImportError:
+    pass
 
-AWS_STORAGE_BUCKET_NAME = 'archiving-anna'
-AWS_ACCESS_KEY_ID = 'AKIAITJCJGO2L32Y6PFQ'
-AWS_SECRET_ACCESS_KEY = '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'
+if 'environment' in  os.environ:
+    if os.environ['environment'] == 'heroku':
+        DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+        AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+        AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+        AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+        AWS_S3_HOST = os.environ['AWS_S3_HOST']
 
-MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_SECURE_URLS = False
+AWS_QUERYSTRING_AUTH = False

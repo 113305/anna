@@ -3,3 +3,5 @@ __pycache__
 annavenv
 db.sqlite3
 .DS_Store
+website/keys.py
+media/*
