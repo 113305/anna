@@ -5,7 +5,6 @@
 }
 
 /*romove carousel gradients*/
-
 .carousel-control.left, .carousel-control.right {
     background-image: none;
     color: black;
@@ -33,6 +32,10 @@
 
 .galleria-theme-classic {
   background: #fff;
+}
+
+.galleria-theme-classic .galleria-thumnails .galleria-img {
+  border-color: #fff;
 }
 
 .galleria-thumbnails {
