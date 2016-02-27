@@ -53,3 +53,52 @@
 .galleria-theme-classic .galleria-info-description {
   font-style : normal;
 }
+
+#wrapper {
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+}
+
+/*#index-outer {
+  text-align: center;
+  height: 100%;
+}
+
+#index-inner {
+ height: 100%;
+ position: relative;
+}*/
+
+.center-outer {
+  text-align:center;
+  height: 100%;
+}
+
+.center-inner {
+  height: 100%;
+  position: relative;
+}
+
+.center-inner img {
+  max-height: 90%;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.contents-outer {
+  margin-left: 20px;
+}
+
+.contents-inner {
+  margin-top: 40px;
+}

@@ -39,9 +39,11 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="/">
+                <p><a href="/" style="float: left">
                     HAN SANG YOUNG
                 </a>
+                <a href="#menu-toggle" id="menu-toggle"><span style="color: white;" class="glyphicon glyphicon-menu-left" aria-hidden="true" id="sidebar-toggle"></span></a>
+              </p>
             </li>
             <li>
                 <a href="/profile">Profile</a>
@@ -58,7 +60,8 @@
     <!-- Page Content -->
 
     <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a> -->
-    <a href="#menu-toggle" id="menu-toggle"><span style="color: black;" class="glyphicon glyphicon-menu-left" aria-hidden="true" id="sidebar-toggle"></span></a>
+    <!-- <a href="#menu-toggle" id="menu-toggle"><span style="color: black;" class="glyphicon glyphicon-menu-left" aria-hidden="true" id="sidebar-toggle"></span></a> -->
+
     {% block content %}
     {% endblock %}
 
@@ -77,6 +80,7 @@
   $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
+      $("#sidebar-toggle").toggleClass("toggled");
       $("#sidebar-toggle").toggleClass("glyphicon-menu-left glyphicon-menu-right")
   });
   </script>

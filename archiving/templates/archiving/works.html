@@ -3,11 +3,12 @@
 
 {% block content %}
 
-<div id="page-content-wrapper">
-    <div class="containser-fluid">
+<div id="page-content-wrapper" class="contents-outer">
+    <div class="containser-fluid contents-inner">
         <div class="row">
             <div class="col-lg-12">
               <h1>난말이야</h1>
+              <br>
               <div class="galleria">
                 {% for work in works %}
                 <img src="{{ work.photo.url }}" rel="{{ work.title }}">
